@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import {
-  ClerkProvider,
   SignInButton,
   SignUpButton,
   SignedIn,
@@ -10,6 +9,10 @@ import {
 } from "@clerk/nextjs";
 import "./globals.css";
 import Link from "next/link";
+import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeSwitcher } from "@/components/theme-switcher";
+import { ClerkThemeWrapper } from "@/components/clerk-theme-wrapper";
+import { Button } from "@/components/ui/button";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,28 +35,40 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
-      <html lang="en">
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
         >
-          <header className="max-w-5xl mx-auto flex justify-between py-4">
-            <div>
-              <Link href="/">Link Shortner App</Link>
-            </div>
-            <div className="flex gap-4">
-              <SignedOut>
-                <SignInButton />
-                <SignUpButton />
-              </SignedOut>
-              <SignedIn>
-                <UserButton />
-              </SignedIn>
-            </div>
-          </header>
-          {children}
-        </body>
-      </html>
-    </ClerkProvider>
+          <ClerkThemeWrapper>
+            <header className="max-w-5xl mx-auto flex justify-between items-center py-4">
+              <div>
+                <Link href="/">Link Shortner App</Link>
+              </div>
+              <div className="flex items-center gap-4">
+                <ThemeSwitcher />
+                <SignedOut>
+                  <SignInButton mode="modal">
+                    <Button variant="ghost">Sign In</Button>
+                  </SignInButton>
+                  <SignUpButton mode="modal">
+                    <Button>Sign Up</Button>
+                  </SignUpButton>
+                </SignedOut>
+                <SignedIn>
+                  <UserButton />
+                </SignedIn>
+              </div>
+            </header>
+            {children}
+          </ClerkThemeWrapper>
+        </ThemeProvider>
+      </body>
+    </html>
   );
 }
