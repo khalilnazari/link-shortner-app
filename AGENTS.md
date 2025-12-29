@@ -1,15 +1,6 @@
 # Agent Instructions - Link Shortener App
 
-This file serves as the main entry point for AI coding assistants working on this project. All coding standards, conventions, and best practices are documented in separate files within the `/docs` directory.
-
-## Quick Reference
-
-- **[TypeScript & Code Style](docs/typescript-standards.md)** - TypeScript configuration, naming conventions, and code style
-- **[Next.js Conventions](docs/nextjs-conventions.md)** - App Router patterns, file structure, and React Server Components
-- **[Database & Drizzle ORM](docs/database-standards.md)** - Schema design, migrations, and query patterns
-- **[UI & Styling](docs/ui-styling-standards.md)** - Tailwind CSS, shadcn/ui components, and design patterns
-- **[Authentication](docs/authentication-standards.md)** - Clerk integration and auth patterns
-- **[Testing & Quality](docs/testing-standards.md)** - Testing strategies and code quality guidelines
+This file serves as the main entry point for AI coding assistants working on this project. All coding standards, conventions, and best practices are documented in separate files within the `/docs` directory. ALWAYS refer to the relevant .md files before generating any code:
 
 ## Project Overview
 
@@ -92,3 +83,7 @@ pnpm lint         # Run ESLint
 
 **Last Updated:** December 29, 2025  
 **For detailed standards, refer to the individual documentation files in `/docs`**
+
+Agent-specific guidance: [docs/auth-clerk-guidelines.md](docs/auth-clerk-guidelines.md)
+
+UI guidelines: [docs/ui-shadcn-guidelines.md](docs/ui-shadcn-guidelines.md)
