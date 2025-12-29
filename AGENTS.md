@@ -1,6 +1,30 @@
 # Agent Instructions - Link Shortener App
 
-This file serves as the main entry point for AI coding assistants working on this project. All coding standards, conventions, and best practices are documented in separate files within the `/docs` directory. ALWAYS refer to the relevant .md files before generating any code:
+## ⚠️ CRITICAL: READ DOCUMENTATION FIRST ⚠️
+
+**BEFORE GENERATING ANY CODE, YOU MUST:**
+
+1. **READ the relevant documentation files in `/docs` directory**
+2. **UNDERSTAND the existing patterns and conventions**
+3. **FOLLOW the established guidelines precisely**
+
+This is **NOT OPTIONAL**. Failure to consult the documentation will result in code that doesn't follow project standards and will need to be rewritten.
+
+---
+
+This file serves as the main entry point for AI coding assistants working on this project. All coding standards, conventions, and best practices are documented in separate files within the `/docs` directory.
+
+## Required Documentation Files
+
+**Authentication & User Management:**
+
+- [docs/auth-clerk-guidelines.md](docs/auth-clerk-guidelines.md) - Clerk authentication patterns, components, and best practices
+
+**UI Components & Styling:**
+
+- [docs/ui-shadcn-guidelines.md](docs/ui-shadcn-guidelines.md) - shadcn/ui component usage, theming, and design patterns
+
+**ALWAYS consult the relevant documentation file BEFORE writing any code in these areas.**
 
 ## Project Overview
 
@@ -24,12 +48,14 @@ This file serves as the main entry point for AI coding assistants working on thi
 
 ## Getting Started
 
-Before making changes:
+**MANDATORY STEPS before making ANY changes:**
 
-1. Review the relevant documentation files in `/docs`
-2. Understand the existing patterns in similar files
-3. Ensure changes align with project standards
-4. Test thoroughly before committing
+1. **FIRST:** Read the relevant documentation files in `/docs` directory
+2. **SECOND:** Understand the existing patterns in similar files
+3. **THIRD:** Ensure changes align with project standards
+4. **FOURTH:** Test thoroughly before committing
+
+**Remember:** The `/docs` directory contains authoritative guidance. When in doubt, CHECK THE DOCS!
 
 ## File Organization
 
@@ -72,10 +98,12 @@ pnpm lint         # Run ESLint
 
 ## Important Notes
 
+- **ALWAYS consult `/docs` before writing code** - This cannot be emphasized enough
 - Always use React Server Components by default
 - Mark components with `"use client"` only when necessary
 - Use Drizzle ORM for all database operations
-- Follow the shadcn/ui component patterns
+- Follow the shadcn/ui component patterns (see [docs/ui-shadcn-guidelines.md](docs/ui-shadcn-guidelines.md))
+- Follow Clerk authentication patterns (see [docs/auth-clerk-guidelines.md](docs/auth-clerk-guidelines.md))
 - Maintain consistent TypeScript strict mode compliance
 - Use Tailwind CSS utility classes for styling
 
@@ -84,6 +112,7 @@ pnpm lint         # Run ESLint
 **Last Updated:** December 29, 2025  
 **For detailed standards, refer to the individual documentation files in `/docs`**
 
-Agent-specific guidance: [docs/auth-clerk-guidelines.md](docs/auth-clerk-guidelines.md)
+## Documentation Index
 
-UI guidelines: [docs/ui-shadcn-guidelines.md](docs/ui-shadcn-guidelines.md)
+- **Authentication:** [docs/auth-clerk-guidelines.md](docs/auth-clerk-guidelines.md)
+- **UI Components:** [docs/ui-shadcn-guidelines.md](docs/ui-shadcn-guidelines.md)
