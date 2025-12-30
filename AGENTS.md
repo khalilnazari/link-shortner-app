@@ -24,6 +24,10 @@ This file serves as the main entry point for AI coding assistants working on thi
 
 - [docs/ui-shadcn-guidelines.md](docs/ui-shadcn-guidelines.md) - shadcn/ui component usage, theming, and design patterns
 
+**Data Fetching & Database:**
+
+- [docs/data-fetching-guidelines.md](docs/data-fetching-guidelines.md) - Data access patterns, query functions, and server component data fetching
+
 **ALWAYS consult the relevant documentation file BEFORE writing any code in these areas.**
 
 ## Project Overview
@@ -63,6 +67,9 @@ This file serves as the main entry point for AI coding assistants working on thi
 /app              # Next.js App Router pages and layouts
 /components       # React components
   /ui             # shadcn/ui components
+/data             # Data access layer
+  /queries        # Database query functions
+  /mutations      # Database mutation functions
 /db               # Database schema and migrations
 /lib              # Shared utilities and helpers
 /hooks            # Custom React hooks
@@ -102,6 +109,7 @@ pnpm lint         # Run ESLint
 - Always use React Server Components by default
 - Mark components with `"use client"` only when necessary
 - Use Drizzle ORM for all database operations
+- **NEVER write database queries inside server components or actions** - Use `/data` directory functions
 - Follow the shadcn/ui component patterns (see [docs/ui-shadcn-guidelines.md](docs/ui-shadcn-guidelines.md))
 - Follow Clerk authentication patterns (see [docs/auth-clerk-guidelines.md](docs/auth-clerk-guidelines.md))
 - Maintain consistent TypeScript strict mode compliance
@@ -109,10 +117,11 @@ pnpm lint         # Run ESLint
 
 ---
 
-**Last Updated:** December 29, 2025  
+**Last Updated:** December 31, 2025  
 **For detailed standards, refer to the individual documentation files in `/docs`**
 
 ## Documentation Index
 
 - **Authentication:** [docs/auth-clerk-guidelines.md](docs/auth-clerk-guidelines.md)
 - **UI Components:** [docs/ui-shadcn-guidelines.md](docs/ui-shadcn-guidelines.md)
+- **Data Fetching:** [docs/data-fetching-guidelines.md](docs/data-fetching-guidelines.md)
