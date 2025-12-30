@@ -48,7 +48,9 @@ export default function RootLayout({
           <ClerkThemeWrapper>
             <header className="max-w-5xl mx-auto flex justify-between items-center py-4">
               <div>
-                <Link href="/">Link Shortner App</Link>
+                <Link href="/" className="text-xl font-bold tracking-tight">
+                  Link Shortner App
+                </Link>
               </div>
               <div className="flex items-center gap-4">
                 <ThemeSwitcher />
