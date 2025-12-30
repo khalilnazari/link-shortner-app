@@ -27,7 +27,7 @@ export default async function Home() {
                   <br />
                   Amplify Your Reach
                 </h1>
-                <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
+                <p className="mx-auto max-w-175 text-muted-foreground md:text-xl">
                   Transform long URLs into short, memorable links. Track clicks,
                   analyze performance, and share with confidence.
                 </p>
@@ -49,7 +49,7 @@ export default async function Home() {
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
                   Powerful Features
                 </h2>
-                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                <p className="max-w-225 text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   Everything you need to manage and track your shortened links
                   effectively.
                 </p>
@@ -108,7 +108,7 @@ export default async function Home() {
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
                   Ready to Get Started?
                 </h2>
-                <p className="max-w-[600px] text-muted-foreground md:text-xl">
+                <p className="max-w-150 text-muted-foreground md:text-xl">
                   Join thousands of users who trust our platform for their link
                   management needs.
                 </p>
