@@ -7,6 +7,8 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { ExternalLink, MousePointerClick } from "lucide-react";
+import { EditLinkDialog } from "@/app/dashboard/components/edit-link-dialog";
+import { DeleteLinkDialog } from "@/app/dashboard/components/delete-link-dialog";
 
 interface LinksListProps {
   links: LinkType[];
@@ -51,6 +53,10 @@ export function LinksList({ links }: LinksListProps) {
               <div className="flex items-center gap-1 text-sm text-muted-foreground">
                 <MousePointerClick className="h-4 w-4" />
                 <span>{link.clicks}</span>
+              </div>
+              <div className="flex items-center">
+                <EditLinkDialog link={link} />
+                <DeleteLinkDialog link={link} />
               </div>
             </div>
           </CardHeader>

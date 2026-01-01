@@ -5,7 +5,7 @@ import {
   type NewLink,
   type NewLinkClick,
 } from "@/db/schema";
-import { eq, sql } from "drizzle-orm";
+import { eq, sql, and } from "drizzle-orm";
 
 export async function createLink(data: NewLink) {
   const [newLink] = await db.insert(links).values(data).returning();
@@ -29,4 +29,25 @@ export async function incrementLinkClicks(
       ...clickData,
     });
   }
+}
+
+export async function updateLink(
+  linkId: number,
+  userId: string,
+  data: { originalUrl?: string; title?: string | null }
+) {
+  const [updatedLink] = await db
+    .update(links)
+    .set({ ...data, updatedAt: new Date() })
+    .where(and(eq(links.id, linkId), eq(links.userId, userId)))
+    .returning();
+  return updatedLink;
+}
+
+export async function deleteLink(linkId: number, userId: string) {
+  const [deletedLink] = await db
+    .delete(links)
+    .where(and(eq(links.id, linkId), eq(links.userId, userId)))
+    .returning();
+  return deletedLink;
 }
