@@ -9,6 +9,8 @@ import {
 import { ExternalLink, MousePointerClick } from "lucide-react";
 import { EditLinkDialog } from "@/app/dashboard/components/edit-link-dialog";
 import { DeleteLinkDialog } from "@/app/dashboard/components/delete-link-dialog";
+import { CopyLinkButton } from "@/components/copy-link-button";
+import { formatRelativeDate } from "@/lib/utils";
 
 interface LinksListProps {
   links: LinkType[];
@@ -62,11 +64,14 @@ export function LinksList({ links }: LinksListProps) {
           </CardHeader>
           <CardContent>
             <div className="flex items-center justify-between text-sm">
-              <code className="rounded bg-muted px-2 py-1">
-                /{link.shortCode}
-              </code>
+              <div className="flex items-center gap-2">
+                <code className="rounded bg-muted px-2 py-1">
+                  /l/{link.shortCode}
+                </code>
+                <CopyLinkButton shortCode={link.shortCode} />
+              </div>
               <span className="text-muted-foreground">
-                {new Date(link.createdAt).toLocaleDateString()}
+                {formatRelativeDate(new Date(link.createdAt))}
               </span>
             </div>
           </CardContent>
