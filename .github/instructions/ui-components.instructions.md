@@ -1,6 +1,6 @@
-# UI — shadcn/ui Guidelines (For Agents)
-
-Concise rules for building UI in the Link Shortener App.
+---
+description: Read this before building or modifying UI components in this project.
+---
 
 ## Core Rule
 

@@ -1,6 +1,6 @@
-# Auth — Clerk Guidelines (For Agents)
-
-Short, actionable rules for implementing authentication in this project.
+---
+description: Read this before implementing or modifying authenticationin the project.
+---
 
 ## Required Rules
 
@@ -20,6 +20,5 @@ Short, actionable rules for implementing authentication in this project.
 - Add or update server-side protection for `/dashboard` and middleware redirect rules as needed.
 - Ensure homepage redirects on server when session indicates a signed-in user.
 - Verify sign-in/up flows open as modals in both desktop and mobile layouts.
-- Document any deviations or new Clerk configuration in `/docs`.
 
 Last updated: December 29, 2025
